@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Letrudo - Juego</title>
+  <link rel="stylesheet" href="game.css">
+  <link rel="website icon" type="PNG" href="Imagenes/Logo-Sopa de letras.png">
+</head>
+<body>
+
+<div class="game-wrapper">
+
+  <div class="game-container">
+
+    <!-- HEADER -->
+    <div class="game-header">
+      <img src="Imagenes/Logo-Sopa de letras.png">
+      <h1>LETRUDO</h1>
+    </div>
+
+    <h2 id="timer" class="hidden">⏱️ 00:00</h2>
+
+    <div class="game-content">
+
+      <!-- GRID -->
+      <div class="grid" id="grid"></div>
+
+      <!-- LISTA DE PALABRAS -->
+      <div class="word-list" id="wordList"></div>
+
+    </div>
+
+    <button onclick="volver()">⬅ Volver</button>
+
+  </div>
+
+  <div class="win-screen" id="winScreen">
+  <div class="win-box">
+    <h1>🎉 ¡GANASTE! 🎉</h1>
+    <p>Encontraste todas las palabras</p>
+    <button onclick="goToModes()">Jugar otra vez</button>
+  </div>
+</div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

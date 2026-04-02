@@ -1,0 +1,230 @@
+body {
+  background: #0f172a;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+/* 🌈 FONDOS */
+body.light {
+  background-image: url("Imagenes/fondo-claro.png");
+  background-size: cover;
+  background-position: center;
+}
+
+body.dark {
+  background-image: url("Imagenes/fondo-oscuro.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 🧊 CONTENEDOR */
+.game-container {
+  margin-top: 50px;
+
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+
+  padding: 30px;
+  border-radius: 20px;
+
+  display: inline-block;
+}
+
+/* 🧠 HEADER MEJORADO */
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.game-header img {
+  height: 60px; /* antes 100px, muy grande */
+}
+
+.game-header h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* ⏱️ TIMER */
+.hidden {
+  display: none;
+}
+
+/* 🔲 GRID */
+.grid {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* 🧩 CELDAS */
+.cell {
+  width: 45px;
+  aspect-ratio: 1 / 1;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+
+  transition: 0.2s;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ✨ HOVER */
+.cell:hover {
+  background: rgba(0,255,255,0.3);
+  box-shadow: 0 0 10px cyan;
+  transform: scale(1.1);
+}
+
+/* 🔥 SELECCIÓN */
+.cell.selected {
+  background: rgba(255,255,0,0.6);
+  box-shadow: 0 0 12px yellow;
+  transform: scale(1.1);
+}
+
+/* 🎮 BOTÓN */
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+  font-weight: bold;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background: rgba(0,255,255,0.3);
+  box-shadow: 0 0 10px cyan;
+}
+
+/* ✅ palabra encontrada */
+.cell.found {
+  background: rgba(0,255,100,0.6);
+  box-shadow: 0 0 12px lime;
+  color: black;
+}
+
+/* 🚫 eliminar selección de texto TOTAL */
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* evitar highlight azul en móviles */
+.cell {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* layout horizontal */
+.game-content {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* lista palabras */
+.word-list {
+  min-width: 200px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+/* palabras */
+.word {
+  font-size: 18px;
+  margin: 10px 0;
+  letter-spacing: 3px;
+}
+
+/* encontrada */
+.word.found {
+  color: lime;
+  text-shadow: 0 0 10px lime;
+}
+
+/* 🏆 PANTALLA DE VICTORIA */
+.win-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(15px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.win-screen.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.win-box {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+
+  box-shadow: 0 0 30px rgba(0,255,255,0.5);
+  animation: pop 0.5s ease;
+}
+
+.win-box h1 {
+  margin-bottom: 10px;
+}
+
+.win-box button {
+  margin-top: 20px;
+}
+
+/* animación */
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}

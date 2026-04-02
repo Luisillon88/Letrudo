@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sopa de Letras</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="website icon" type="PNG" href="Imagenes/Logo-Sopa de letras.png">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <div class="logo">
+        <img src="Imagenes/Logo-Sopa de letras.png" alt="Letrudo">
+    </div>
+    <div class="user-info">
+      <span id="username">Jugador</span>
+      <span id="editName" style="cursor:pointer;">✏️</span>
+    </div>
+  </div>
+
+  <!-- Toggle -->
+  <div class="theme-toggle" id="themeToggle">🌙</div>
+
+  <!-- Contenido -->
+  <div class="container">
+    <div class="menu-box">
+      <button class="btn primary">MULTIJUGADOR</button>
+      <button class="btn secondary" id="playBtn">UN JUGADOR</button>
+      <button class="btn option" id="openSettings">AJUSTES</button>
+    </div>
+  </div>
+
+ <div class="settings-panel" id="settingsPanel">
+  <h2>AJUSTES</h2>
+
+  <div class="setting-item">
+    <span>🔊 Sonido</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="setting-item">
+    <span>✨ Efectos</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <button class="close-btn" id="closeSettings">Cerrar</button>
+</div>
+
+<div class="settings-panel" id="namePanel">
+  <h2>Cambiar nombre</h2>
+
+  <input type="text" id="nameInput" placeholder="Tu nombre">
+
+  <button class="btn primary" id="saveName">Guardar</button>
+  <button class="close-btn" id="closeName">Cancelar</button>
+</div>
+
+  <script src="script.js"></script>
+  <canvas id="particles"></canvas>
+</body>
+</html>

@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: background 0.5s;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+}
+
+/* 🌈 FONDOS */
+body.light {
+  background-image: url("Imagenes/fondo-claro.png"); /* imagen morada */
+}
+
+body.dark {
+  background-image: url("Imagenes/fondo-oscuro.png"); /* imagen oscura */
+}
+
+/* 🧊 TOP BAR */
+.top-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 100px;
+}
+
+.user-info {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.user-info span {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 📦 CONTENEDOR */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🧊 CAJA DE MENÚ */
+.menu-box {
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 🎮 BOTONES */
+.btn {
+  padding: 15px 50px;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: 0.3s;
+}
+
+/* estilos */
+.primary {
+  background: rgba(0,255,255,0.2);
+  border: 2px solid cyan;
+}
+
+.secondary {
+  background: rgba(255,0,255,0.2);
+  border: 2px solid magenta;
+}
+
+.option {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid white;
+}
+
+/* hover */
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* 🌙 BOTÓN TEMA */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  font-size: 1.6rem;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* antes -1 */
+  pointer-events: none;
+}
+
+/*Ajustes*/
+
+.settings-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(20px);
+
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  min-width: 300px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.settings-panel.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.settings-panel h2 {
+  margin-bottom: 20px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* SWITCH MODERNO */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: #444;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 2.5px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: cyan;
+}
+
+input:checked + .slider::before {
+  transform: translateX(25px);
+}
+
+/* BOTÓN CERRAR */
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+
+input {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+  text-align: center;
+}
